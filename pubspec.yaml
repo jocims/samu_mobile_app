@@ -1,0 +1,77 @@
+name: samu_mobile_app
+description: "A new Flutter project."
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+#------------ PACKAGES -------------#
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Utility Packages
+  http: ^1.1.0
+  intl: ^0.18.1
+  logger: ^1.0.2
+  url_launcher: ^6.1.10
+  flutter_native_splash: ^2.4.6
+
+  # Icons
+  iconsax: ^0.0.8
+  cupertino_icons: ^1.0.8
+
+  # State Management
+  get: ^4.6.5
+  get_storage: ^2.1.0
+
+  # Product Specific
+
+#--------- ./ PACKAGES END ---------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  #--------- LOCAL ASSETS ---------#
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/logos/
+
+  #--------- LOCAL FONTS ---------#
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBoldItalic.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-BoldItalic.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-BlackItalic.ttf
+          weight: 900
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
