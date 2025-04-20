@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../../screens/login/login.dart';
+
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
 
@@ -8,9 +10,8 @@ class OnBoardingController extends GetxController {
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
 
-
   /// Update Current Page Index when user swipes
-  void updatePageIndicator (int index) => currentPageIndex.value = index;
+  void updatePageIndicator(int index) => currentPageIndex.value = index;
 
   /// Jump to the specified dot selected page
   void dotNavigationClick(index) {
@@ -20,8 +21,8 @@ class OnBoardingController extends GetxController {
 
   /// Update Current Index and jump to the next page
   void nextPage() {
-    if(currentPageIndex.value == 2) {
-      // Get.to(LoginScreen());
+    if (currentPageIndex.value == 2) {
+      Get.offAll(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
