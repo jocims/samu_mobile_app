@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class TColors {
   TColors._(); // Private constructor to prevent instantiation
 
+  static const Color dark = Color(0xFF000000); // Black
+  static const Color light = Color(0xFFFFFFFF); // White
+
   // App Basic Colors
   static const Color primaryColor = Color(0xFF6200EE); // Purple
   static const Color secondaryColor = Color(0xFF03DAC6); // Teal

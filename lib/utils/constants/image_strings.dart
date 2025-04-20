@@ -7,4 +7,12 @@ class TImages {
   // Social Logos
   static const String facebookLogo = 'assets/images/facebook_logo.png';
   static const String instagramLogo = 'assets/images/instagram_logo.png';
+
+  // Onboarding Images
+  static const String onBoardingImage1 =
+      'assets/images/on_board_images/sirene1.gif';
+  static const String onBoardingImage2 =
+      'assets/images/on_board_images/sirene2.gif';
+  static const String onBoardingImage3 =
+      'assets/images/on_board_images/sirene3.gif';
 }
