@@ -31,7 +31,7 @@ class ConfiguracaoAmbulanciaPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Configurar Ambulância')),
+      appBar: AppBar(title: Text('Configurar Ambulância Test')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Card(

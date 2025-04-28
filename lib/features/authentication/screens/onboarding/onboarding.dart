@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:samu_mobile_app/features/authentication/controllers/onboarding/onboarding.controller.dart';
+import 'package:samu_mobile_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:samu_mobile_app/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:samu_mobile_app/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:samu_mobile_app/utils/constants/image_strings.dart';

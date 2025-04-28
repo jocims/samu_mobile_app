@@ -3,7 +3,7 @@ import 'package:samu_mobile_app/utils/constants/colors.dart';
 import 'package:samu_mobile_app/utils/device/device_utility.dart';
 import 'package:samu_mobile_app/utils/helpers/helper_functions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:samu_mobile_app/features/authentication/controllers/onboarding/onboarding.controller.dart';
+import 'package:samu_mobile_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 

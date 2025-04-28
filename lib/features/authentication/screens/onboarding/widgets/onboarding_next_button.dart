@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:samu_mobile_app/features/authentication/controllers/onboarding/onboarding.controller.dart';
+import 'package:samu_mobile_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:samu_mobile_app/utils/constants/colors.dart';
 import 'package:samu_mobile_app/utils/constants/sizes.dart';
 import 'package:samu_mobile_app/utils/device/device_utility.dart';

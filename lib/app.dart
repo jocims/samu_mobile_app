@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:samu_mobile_app/features/authentication/screens/login/login.dart';
 import 'package:samu_mobile_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:samu_mobile_app/utils/theme/theme.dart';
 import 'package:samu_mobile_app/features/authentication/screens/dashboard.dart';
-import 'package:samu_mobile_app/features/authentication/screens/ambulancia_selection.dart';
+import 'package:samu_mobile_app/features/authentication/screens/config_ambulance_screen.dart';
+import 'package:samu_mobile_app/features/authentication/screens/ambulancetest.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -14,7 +16,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: ConfiguracaoAmbulanciaPage(),
+      home: LoginScreen(),
     );
   }
 }
