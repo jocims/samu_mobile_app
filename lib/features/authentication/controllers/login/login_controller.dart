@@ -11,7 +11,7 @@ class LoginController {
     String email,
     String password,
   ) async {
-    final url = Uri.parse('http://10.0.2.2:5001/auth/api/login');
+    final url = Uri.parse('http://10.0.2.2:5000/auth/api/login');
     print(
       'Sending login request to $url with email: $email and password: $password',
     );

@@ -19,6 +19,7 @@ dependencies:
   url_launcher: ^6.1.10
   flutter_native_splash: ^2.4.6
   smooth_page_indicator: ^1.2.0
+  shared_preferences: ^2.2.2
 
   # Icons
   iconsax: ^0.0.8
