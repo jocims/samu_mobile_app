@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
 import 'package:samu_mobile_app/utils/constants/sizes.dart';
 import 'package:samu_mobile_app/utils/constants/text_strings.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:samu_mobile_app/features/authentication/controllers/login/login_controller.dart';
+import 'package:samu_mobile_app/features/authentication/screens/config_ambulance_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -24,13 +26,22 @@ class _LoginFormState extends State<LoginForm> {
     super.dispose();
   }
 
-  void _handleLogin() {
+  Future<void> _handleLogin() async {
     if (_formKey.currentState!.validate()) {
-      LoginController.loginUser(
-        context,
+      final (success, message) = await LoginController.loginUser(
         _emailController.text.trim(),
         _passwordController.text.trim(),
       );
+
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
+
+      if (success) {
+        Get.offAll(() => const ConfigAmbulanceScreen());
+      }
     }
   }
 

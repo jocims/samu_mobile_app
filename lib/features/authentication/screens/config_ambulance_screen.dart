@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../models/ambulancia.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ConfigAmbulanceScreen extends StatefulWidget {
   const ConfigAmbulanceScreen({super.key});
@@ -23,8 +24,21 @@ class ConfigAmbulanceScreenState extends State<ConfigAmbulanceScreen> {
 
   Future<void> fetchAmbulancias() async {
     try {
+      final prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('auth_token');
+
+      if (token == null) {
+        print('No token found. User might not be logged in.');
+        setState(() => isLoading = false);
+        return;
+      }
+
       final response = await http.get(
         Uri.parse('http://10.0.2.2:5000/api/ambulancias'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
       );
 
       if (response.statusCode == 200) {
