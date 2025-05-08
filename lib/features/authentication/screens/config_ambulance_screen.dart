@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../models/ambulancia.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get/get.dart';
+import 'package:samu_mobile_app/features/authentication/screens/dashboard.dart';
 
 class ConfigAmbulanceScreen extends StatefulWidget {
   const ConfigAmbulanceScreen({super.key});
@@ -137,18 +139,28 @@ class ConfigAmbulanceScreenState extends State<ConfigAmbulanceScreen> {
                         ),
                         SizedBox(height: 20),
                         ElevatedButton.icon(
-                          onPressed: () {
+                          onPressed: () async {
                             if (_selectedAmbulancia != null) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'Ambulância configurada com sucesso!',
-                                  ),
-                                ),
+                              final prefs =
+                                  await SharedPreferences.getInstance();
+                              await prefs.setString(
+                                'ambulancia_id',
+                                _selectedAmbulancia!,
                               );
+
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                      'Ambulância configurada com sucesso!',
+                                    ),
+                                  ),
+                                );
+                                Get.offAll(() => const DashboardScreen());
+                              }
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text('Selecione uma ambulância.'),
                                 ),
                               );

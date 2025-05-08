@@ -41,6 +41,10 @@ class _LoginFormState extends State<LoginForm> {
 
       if (success) {
         Get.offAll(() => const ConfigAmbulanceScreen());
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Login failed. Please try again.')),
+        );
       }
     }
   }
