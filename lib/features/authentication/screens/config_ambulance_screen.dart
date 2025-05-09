@@ -156,6 +156,12 @@ class ConfigAmbulanceScreenState extends State<ConfigAmbulanceScreen> {
                                     ),
                                   ),
                                 );
+                                final prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString(
+                                  'selected_ambulancia_id',
+                                  _selectedAmbulancia!,
+                                );
                                 Get.offAll(() => const DashboardScreen());
                               }
                             } else {

@@ -1,14 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:samu_mobile_app/app.dart';
+import 'package:samu_mobile_app/services/startup_service.dart';
+import 'package:samu_mobile_app/features/authentication/screens/login/login.dart';
+import 'package:samu_mobile_app/features/authentication/screens/config_ambulance_screen.dart';
+import 'package:samu_mobile_app/features/authentication/screens/dashboard.dart';
+import 'package:get/get.dart';
 
-/// This is the main entry point of the application.
-/// It initializes the app and sets the theme based on the system settings.
-void main() {
-  // TODO: Add Widgets Binding to ensure that the app is properly initialized.
-  // TODO: Init Local Storage to store user preferences.
-  // TODO: Await Native Splash Screen to show a splash screen while the app is loading.
-  // TODO: Initialize SQL Database to store user data.
-  // TODO: Initialize Authentication
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final initialRoute = await StartupService.getInitialRoute();
 
-  runApp(const App());
+  runApp(MyApp(initialRoute: initialRoute));
+}
+
+class MyApp extends StatelessWidget {
+  final String initialRoute;
+
+  const MyApp({super.key, required this.initialRoute});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
+      initialRoute: initialRoute,
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/config-ambulance': (context) => const ConfigAmbulanceScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
+      },
+    );
+  }
 }
